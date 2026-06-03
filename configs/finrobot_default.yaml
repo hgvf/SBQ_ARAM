@@ -1,0 +1,26 @@
+workflow: finrobot
+version: 1
+
+agents:
+  data_cot_agent:
+    mode: passthrough
+    model: default_reasoner
+
+  concept_cot_agent:
+    mode: passthrough
+    model: default_reasoner
+
+  thesis_cot_agent:
+    mode: passthrough
+    model: default_reasoner
+
+  valuation_agent:
+    mode: passthrough
+    model: default_reasoner
+
+  report_writer:
+    mode: passthrough
+    model: report_writer
+
+output_schema: research_report_v1
+save_trace: true

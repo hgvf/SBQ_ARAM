@@ -1,0 +1,43 @@
+version: 1
+
+workflows:
+  tradingagents:
+    enabled: true
+    agents:
+      sentiment_analyst:
+        mode: api_agent
+        api:
+          endpoint: "http://localhost:8200/fingpt/sentiment"
+          method: "POST"
+          timeout_seconds: 60
+        input_mapping:
+          ticker: "$.ticker"
+          date: "$.date"
+          news: "$.context.news"
+        output_schema: "sentiment_signal_v1"
+
+      technical_analyst:
+        mode: llm_tool_agent
+        llm:
+          provider: "ollama"
+          model: "qwen2.5:7b"
+          temperature: 0.1
+          max_tokens: 2048
+        prompt: "prompts/tradingagents/technical_analyst.yaml"
+        tools:
+          - "sbq_quant.get_ohlcv"
+          - "sbq_quant.get_indicators"
+        output_schema: "technical_view_v1"
+
+  finrobot:
+    enabled: true
+    agents:
+      report_writer:
+        mode: llm_agent
+        llm:
+          provider: "ollama"
+          model: "qwen2.5:7b"
+          temperature: 0.2
+          max_tokens: 4096
+        prompt: "prompts/finrobot/report_writer.yaml"
+        output_schema: "research_report_v1"

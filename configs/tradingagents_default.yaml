@@ -1,0 +1,38 @@
+workflow: tradingagents
+version: 1
+
+agents:
+  fundamental_analyst:
+    mode: passthrough
+    model: default_reasoner
+
+  sentiment_analyst:
+    mode: passthrough
+    model: default_reasoner
+
+  technical_analyst:
+    mode: passthrough
+    model: default_reasoner
+
+  bull_researcher:
+    mode: passthrough
+    model: default_reasoner
+
+  bear_researcher:
+    mode: passthrough
+    model: default_reasoner
+
+  trader:
+    mode: passthrough
+    model: default_reasoner
+
+  risk_manager:
+    mode: passthrough
+    model: default_reasoner
+
+debate:
+  rounds: 2
+  max_tokens_per_round: 1024
+
+output_schema: trading_decision_v1
+save_trace: true

@@ -1,0 +1,33 @@
+# ARAM Master Configuration
+version: "0.2.0"
+
+# Default LLM provider: ollama | llama_cpp | remote_api | custom_api
+default_llm_provider: "ollama"
+
+# Default model alias from model_registry.yaml
+default_model: "default_reasoner"
+
+# Workflow defaults
+workflows:
+  tradingagents:
+    enabled: true
+    override_profile: "default"
+  finrobot:
+    enabled: true
+    override_profile: "default"
+
+# Trace and storage
+storage:
+  traces_dir: "storage/traces"
+  reports_dir: "storage/reports"
+  decisions_dir: "storage/decisions"
+  cache_dir: "storage/cache"
+
+# API service settings
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+# Streamlit UI settings
+ui:
+  api_base_url: "http://localhost:8000"
