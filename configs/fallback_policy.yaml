@@ -1,0 +1,19 @@
+fallbacks:
+  llm:
+    max_retries: 2
+    retry_delay_seconds: 3
+    fallback_order:
+      - provider: "ollama"
+      - provider: "llama_cpp"
+      - provider: "remote_api"
+
+  parser:
+    max_repair_attempts: 2
+    repair_model: "default_reasoner"
+
+  tools:
+    timeout_seconds: 30
+    allow_partial_results: true
+
+  risk:
+    if_risk_tool_fails: "manual_review_required"

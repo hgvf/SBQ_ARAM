@@ -1,0 +1,54 @@
+tools:
+  sbq_quant.get_ohlcv:
+    type: "http"
+    endpoint: "http://localhost:8001/ohlcv"
+    method: "GET"
+    timeout_seconds: 30
+
+  sbq_quant.get_indicators:
+    type: "http"
+    endpoint: "http://localhost:8001/indicators"
+    method: "GET"
+    timeout_seconds: 30
+
+  sbq_quant.get_risk_snapshot:
+    type: "http"
+    endpoint: "http://localhost:8001/risk/snapshot"
+    method: "GET"
+    timeout_seconds: 30
+
+  sbq_quant.get_fundamentals:
+    type: "http"
+    endpoint: "http://localhost:8001/fundamentals"
+    method: "GET"
+    timeout_seconds: 30
+
+  sbq_quant.get_signals:
+    type: "http"
+    endpoint: "http://localhost:8001/signals"
+    method: "GET"
+    timeout_seconds: 30
+
+  sbq_quant.run_backtest:
+    type: "http"
+    endpoint: "http://localhost:8001/backtest"
+    method: "POST"
+    timeout_seconds: 120
+
+  rag.retrieve_filings:
+    type: "http"
+    endpoint: "http://localhost:8400/retrieve/filings"
+    method: "POST"
+    timeout_seconds: 30
+
+  rag.retrieve_news:
+    type: "http"
+    endpoint: "http://localhost:8400/retrieve/news"
+    method: "POST"
+    timeout_seconds: 30
+
+  fingpt.sentiment:
+    type: "http"
+    endpoint: "http://localhost:8200/sentiment"
+    method: "POST"
+    timeout_seconds: 60
