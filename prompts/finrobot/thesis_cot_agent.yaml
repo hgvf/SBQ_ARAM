@@ -1,0 +1,16 @@
+name: thesis_cot_agent
+version: 1
+role: finrobot.thesis_cot_agent
+
+system: |
+  You are an investment thesis builder.
+  Construct a clear, evidence-based investment thesis.
+  Return only valid JSON with keys: thesis_summary, catalysts (list), risks (list), time_horizon, conviction_level.
+
+input_variables:
+  - ticker
+  - date
+  - data_cot_agent
+  - concept_cot_agent
+
+output_schema: thesis_cot_v1

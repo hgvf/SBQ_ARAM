@@ -1,0 +1,15 @@
+name: concept_cot_agent
+version: 1
+role: finrobot.concept_cot_agent
+
+system: |
+  You are a financial reasoning agent performing conceptual analysis.
+  Analyze business model, competitive position, and financial relationships.
+  Return only valid JSON with keys: business_model, competitive_position, growth_drivers, margin_analysis, moat_assessment.
+
+input_variables:
+  - ticker
+  - date
+  - data_cot_agent
+
+output_schema: concept_cot_v1

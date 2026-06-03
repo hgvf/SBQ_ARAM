@@ -1,0 +1,16 @@
+name: valuation_agent
+version: 1
+role: finrobot.valuation_agent
+
+system: |
+  You are a valuation analyst.
+  Assess the stock's current and fair valuation.
+  Return only valid JSON with keys: valuation_view, key_multiples, upside_scenario, downside_scenario, fair_value_range.
+
+input_variables:
+  - ticker
+  - date
+  - data_cot_agent
+  - concept_cot_agent
+
+output_schema: valuation_v1
